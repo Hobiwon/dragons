@@ -7,7 +7,7 @@ tags:
 
 # Clérwen
   
-![Clérwen](../Assets/characters/clérwen.png)
+![Clérwen](../Assets/characters/clerwen.png)
 
 ## Summary
 
