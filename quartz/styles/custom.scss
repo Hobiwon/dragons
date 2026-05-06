@@ -1,3 +1,42 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+.pc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.pc-card {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 1rem;
+  background: var(--light);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.pc-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.pc-card h3 {
+  margin: 0.25rem 0;
+}
+
+.pc-card p {
+  margin: 0;
+  opacity: 0.75;
+}
