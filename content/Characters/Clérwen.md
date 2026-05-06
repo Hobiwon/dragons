@@ -19,7 +19,7 @@ A young Elf Cleric.
   
 ## Relationships  
   
-- [[Campaign/Important NPCs]]  
+- [[3. Important NPCs]]  
 - [[Setting/Sword Coast]]  
   
 ## Session Appearances  

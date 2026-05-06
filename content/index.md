@@ -11,47 +11,52 @@ Welcome to the campaign hub for our adventures across the Sword Coast.
 
 ## The Party
 
-<div class="pc-grid">  
+<div class="party-grid">
 
-<a class="pc-card" href="/Characters/Clérwen">
-<img src="/Assets/characters/clerwen.png">
-<h3>Clérwen</h3>
-<p>Elf Cleric</p>
+<a class="party-card" href="/Characters/Clérwen">
+  <div class="party-image-wrapper">
+    <img src="/Assets/characters/clerwen.png" alt="Clérwen">
+  </div>
+
+  <div class="party-content">
+    <div class="party-name">Clérwen</div>
+    <div class="party-class">Cleric - Domain of Light</div>
+    <div class="party-race">Elf Human</div>
+  </div>
+</a>
+
+<a class="party-card" href="/Characters/Rurik Ironhand">
+  <div class="party-image-wrapper">
+    <img src="/Assets/characters/rurik.png" alt="Rurik Ironhand">
+  </div>
+
+  <div class="party-content">
+    <div class="party-name">Rurik Ironhand</div>
+    <div class="party-class">Berserker Barbarian</div>
+    <div class="party-race">Human</div>
+  </div>
 </a>
 
 </div>
 
----  
+---
 
 ## Latest Session Notes
 
-```dataview
-LIST
-FROM "Sessions"
-SORT date DESC
-LIMIT 10
-```
+-[[Session 00 - The Story Begins]]
 
-[[Sessions/Sessions Archive|View full session archive →]]
+[[Sessions/Archive|View full session archive →]]
 
 ---
 
-## NPCs
-
-```dataview
-TABLE faction, status
-FROM #npc
-SORT location
-```
-
-
 ## Campaign Quick Links
 
-| Area | Link |
-|---|---|
-| Campaign Overview | [[Campaign/Overview]] |
-| Recap So Far | [[Campaign/Recap So Far]] |
-| Important NPCs | [[Campaign/Important NPCs]] |
-| Factions | [[Campaign/Factions]] |
+| Area              | Link                    |
+| ----------------- | ----------------------- |
+| Campaign Overview | [[1. Overview]]         |
+| Recap So Far      | [[2. Recap So Far]]     |
+| Important NPCs    | [[3. Important NPCs]]   |
+| Factions          | [[4. Factions]]         |
+| Timeline          | [[5. Timeline]]         |
+| House Rules       | [[6. House Rules]]      |
 | Sword Coast Guide | [[Setting/Sword Coast]] |
-| House Rules | [[Campaign/House Rules]] |
