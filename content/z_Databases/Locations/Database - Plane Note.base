@@ -1,0 +1,72 @@
+properties:
+  file.name:
+    displayName: Name
+  property.aliases:
+    displayName: Aliases
+  property.occupation:
+    displayName: Occupation
+  property.located:
+    displayName: Location
+  property.organizationTypes:
+    displayName: Type
+  property.poiTypes:
+    displayName: Type
+  property.districttype:
+    displayName: Type
+  property.organizations:
+    displayName: Organizations
+  note.aliases:
+    displayName: Aliases
+  note.occupation:
+    displayName: Occupation
+  note.organizations:
+    displayName: Organizations
+  note.located:
+    displayName: Location
+  note.organizationTypes:
+    displayName: Types
+  note.poiTypes:
+    displayName: Types
+  note.districttype:
+    displayName: Types
+views:
+  - type: cards
+    name: Planets
+    filters:
+      and:
+        - file.inFolder("Campaign/Locations/Worlds")
+        - worldType.contains("Planet")
+        - located.contains(this)
+    order:
+      - file.name
+    sort:
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 167
+      property.aliases: 188
+      property.occupation: 177
+      property.located: 319
+    image: note.art
+    cardSize: 100
+    imageAspectRatio: 0.8
+  - type: cards
+    name: Moons
+    filters:
+      and:
+        - file.inFolder("Campaign/Worlds")
+        - worldType.contains("Moon")
+        - located.contains(this)
+    order:
+      - file.name
+      - aliases
+      - located
+    sort: []
+    columnSize:
+      file.name: 167
+      property.aliases: 188
+      property.occupation: 177
+      property.located: 319
+    image: note.art
+    cardSize: 100
+    imageAspectRatio: 0.8

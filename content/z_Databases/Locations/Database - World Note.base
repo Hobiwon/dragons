@@ -1,0 +1,96 @@
+formulas:
+  LinkedViaPlaces: |-
+    [0,1,2,3,4,5,6,7,8,9,10].reduce(
+        if(
+            acc.isType("number"),
+            acc,
+            if(
+                acc.contains(this.file.asLink()),
+                index,
+                acc.map(file(value.replace(/^\[\[(.*?)(?:\|.*)?\]\]$/g, "$1")).properties.located)
+                    .flat()
+                    .unique()
+            )
+        ),
+        list(file.asLink())
+    )
+properties:
+  file.name:
+    displayName: Name
+  PlacesForThis:
+    displayName: Places (for this note)
+  note.aliases:
+    displayName: Aliases
+  note.vehicleType:
+    displayName: Type
+  note.poiType:
+    displayName: Type
+  note.titles:
+    displayName: Titles
+  note.occupation:
+    displayName: Occupation
+  note.district:
+    displayName: District
+  note.located:
+    displayName: Location
+views:
+  - type: cards
+    name: Continents
+    filters:
+      and:
+        - file.inFolder("Campaign/Locations/Geographic")
+        - geographicType.contains("Continent")
+        - formula.LinkedViaPlaces > 0
+    order:
+      - file.name
+      - aliases
+    image: note.art
+    cardSize: 160
+    columnSize:
+      file.name: 275
+      note.aliases: 261
+  - type: cards
+    name: Islands
+    filters:
+      and:
+        - file.inFolder("Campaign/Locations/Geographic")
+        - geographicType.contains("Island")
+        - formula.LinkedViaPlaces > 0
+    order:
+      - file.name
+      - aliases
+    image: note.art
+    cardSize: 160
+    columnSize:
+      file.name: 275
+      note.aliases: 261
+  - type: cards
+    name: Oceans
+    filters:
+      and:
+        - file.inFolder("Campaign/Locations/Geographic")
+        - geographicType.contains("Ocean")
+        - formula.LinkedViaPlaces > 0
+    order:
+      - file.name
+      - aliases
+    image: note.art
+    cardSize: 160
+    columnSize:
+      file.name: 275
+      note.aliases: 261
+  - type: cards
+    name: Moons
+    filters:
+      and:
+        - file.inFolder("Campaign/Locations/Worlds")
+        - worldType.contains("Moon")
+        - formula.LinkedViaPlaces > 0
+    order:
+      - file.name
+      - aliases
+    image: note.art
+    cardSize: 160
+    columnSize:
+      file.name: 275
+      note.aliases: 261

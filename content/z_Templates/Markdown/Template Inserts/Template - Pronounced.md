@@ -1,0 +1,1 @@
+<%* tR += `** *"${await tp.system.prompt("Enter Pronunciation")}"* **`; -%>

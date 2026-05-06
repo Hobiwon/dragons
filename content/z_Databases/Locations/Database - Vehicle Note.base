@@ -1,0 +1,73 @@
+properties:
+  file.name:
+    displayName: Name
+  property.aliases:
+    displayName: Aliases
+  property.occupation:
+    displayName: Occupation
+  property.located:
+    displayName: Location
+  property.organizationTypes:
+    displayName: Type
+  property.poiTypes:
+    displayName: Type
+  property.districttype:
+    displayName: Type
+  property.organizations:
+    displayName: Organizations
+  property.ancestry:
+    displayName: Ancestry
+  property.heritage:
+    displayName: Heritage
+  note.aliases:
+    displayName: Aliases
+  note.ancestry:
+    displayName: Ancestry
+  note.heritage:
+    displayName: Heritage
+  note.occupation:
+    displayName: Occupation
+  note.organizations:
+    displayName: Organizations
+views:
+  - type: cards
+    name: Characters
+    filters:
+      and:
+        - file.inFolder("Campaign/Characters")
+        - located.contains(this)
+        - or:
+            - '!condition.contains("Dead")'
+            - condition.isEmpty()
+    order:
+      - file.name
+    sort: []
+    columnSize:
+      file.name: 167
+      note.ancestry: 124
+      note.located: 537
+    cardSize: 100
+    imageAspectRatio: 0.8
+    image: note.art
+  - type: table
+    name: Characters (Detailed)
+    filters:
+      and:
+        - file.inFolder("Campaign/Characters")
+        - located.contains(this)
+        - or:
+            - '!condition.contains("Dead")'
+            - condition.isEmpty()
+    order:
+      - file.name
+      - aliases
+      - ancestry
+      - occupation
+    sort: []
+    columnSize:
+      file.name: 233
+      note.aliases: 246
+      note.ancestry: 158
+    cardSize: 100
+    imageAspectRatio: 0.8
+    image: note.art

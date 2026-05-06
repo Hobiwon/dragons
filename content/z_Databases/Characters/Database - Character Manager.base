@@ -1,0 +1,106 @@
+properties:
+  file.name:
+    displayName: Name
+  property.aliases:
+    displayName: Aliases
+  property.deliveryDate:
+    displayName: Due Date
+  property.summary:
+    displayName: Summary
+  property.poiTypes:
+    displayName: Type
+  property.located:
+    displayName: Location
+  note.aliases:
+    displayName: Aliases
+  note.deliveryDate:
+    displayName: Delivery Date
+  note.summary:
+    displayName: Summary
+  note.poiTypes:
+    displayName: Types
+  note.located:
+    displayName: Location
+  note.fc-date:
+    displayName: Due Date
+  note.completed:
+    displayName: Completed
+  note.poiType:
+    displayName: Type
+  note.dueDate:
+    displayName: Due
+views:
+  - type: table
+    name: Lead / Own
+    filters:
+      and:
+        - or:
+            - file.inFolder("Campaign/Locations")
+            - file.inFolder("Campaign/Possessions/Vehicles")
+            - file.inFolder("Campaign/Factions")
+        - or:
+            - owners.contains(this)
+            - leaders.contains(this)
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+      - aliases
+      - poiType
+      - Located
+    sort:
+      - property: file.name
+        direction: ASC
+    summaries: {}
+    columnSize:
+      file.name: 260
+      note.aliases: 203
+      note.poiType: 134
+  - type: table
+    name: Letters
+    filters:
+      and:
+        - holder.contains(this)
+        - tags.contains("Letter")
+    order:
+      - file.name
+      - aliases
+      - summary
+    columnSize:
+      file.name: 134
+      note.aliases: 203
+      note.summary: 380
+  - type: table
+    name: Literature
+    filters:
+      and:
+        - file.inFolder("Campaign/Possessions/Literature")
+        - holder.contains(this)
+    order:
+      - file.name
+      - aliases
+      - summary
+    columnSize:
+      file.name: 153
+      property.aliases: 181
+      property.summary: 435
+  - type: table
+    name: Service Requests
+    filters:
+      and:
+        - file.inFolder("Campaign/Parties/Service Requests")
+        - customer.contains(this)
+        - completed != true
+    order:
+      - file.name
+      - aliases
+      - dueDate
+      - completed
+      - summary
+    columnSize:
+      file.name: 186
+      note.aliases: 169
+      note.dueDate: 164
+      note.completed: 21
+      note.summary: 570
