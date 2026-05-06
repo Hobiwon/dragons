@@ -1,5 +1,5 @@
 ---
-title: Tyrany of Dragons
+title: Tyranny of Dragons
 description: Campaign dashboard
 ---
 
